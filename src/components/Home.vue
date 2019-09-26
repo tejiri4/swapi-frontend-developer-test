@@ -9,11 +9,17 @@
       <Select description="FILTER" :options="filterOptions"/>
       <Select description="VIEW" :options="viewOptions"/>
     </div>
+    <div class="character-group">
+      <div v-for="(character, index) in characters" v-bind:key="index">
+        <Character :character="character"/>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 import Search from './search/Search';
 import Select from './select/Select';
+import Character from './character/Character';
 
 export default {
   name: 'Home',
@@ -21,11 +27,26 @@ export default {
     return {
       filterOptions: [{ detail: 'Male' }],
       viewOptions: [{ detail: 'Grid' }],
+      characters: [
+        {
+          image: 'https://res.cloudinary.com/store-manager/image/upload/v1569418364/character-1.jpg',
+          name: 'Luke Skywalker',
+          subName: 'Son of Analkin',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore voluptate...',
+        },
+        {
+          image: 'https://res.cloudinary.com/store-manager/image/upload/v1569418364/character-1.jpg',
+          name: 'Luke Skywalker',
+          subName: 'Son of Analkin',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore voluptate...',
+        },
+      ],
     };
   },
   components: {
     Search,
     Select,
+    Character,
   },
 };
 </script>
@@ -54,5 +75,10 @@ export default {
 .select-group {
   margin: 2rem 7rem;
   display: flex;
+}
+
+.character-group {
+   margin: 2rem 7rem;
+   display: flex;
 }
 </style>
