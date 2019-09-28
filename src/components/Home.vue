@@ -14,12 +14,16 @@
         <Character :character="character"/>
       </div>
     </div>
+    <div>
+      <Pagination />
+    </div>
   </div>
 </template>
 <script>
 import Search from './search/Search';
 import Select from './select/Select';
 import Character from './character/Character';
+import Pagination from './pagination/Pagination';
 
 export default {
   name: 'Home',
@@ -47,6 +51,7 @@ export default {
     Search,
     Select,
     Character,
+    Pagination,
   },
 };
 </script>
